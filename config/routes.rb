@@ -1,4 +1,6 @@
 TodoList::Application.routes.draw do
+  get "todo/index"
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
