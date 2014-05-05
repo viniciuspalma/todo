@@ -1,3 +1,3 @@
 TodoList::Application.routes.draw do
-  root 'todo/index'
+  get 'todo/index'
 end
