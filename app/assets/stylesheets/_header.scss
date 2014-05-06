@@ -1,0 +1,38 @@
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 50px;
+  margin: 0;
+  padding: 0;
+  font-size: 5em;
+  background: #9d352d;
+  background: -moz-linear-gradient(top,  #9d352d 0%, #ce574f 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#9d352d), color-stop(100%,#ce574f));
+  background: -webkit-linear-gradient(top,  #9d352d 0%,#ce574f 100%);
+  background: -o-linear-gradient(top,  #9d352d 0%,#ce574f 100%);
+  background: -ms-linear-gradient(top,  #9d352d 0%,#ce574f 100%);
+  background: linear-gradient(to bottom,  #9d352d 0%,#ce574f 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#9d352d', endColorstr='#ce574f',GradientType=0 );
+}
+
+.button {
+  width: 40px;
+  height: 40px;
+
+  &.add-todo {
+    float: right;
+    background: #fff;
+    color: #9d352d;
+    border: solid 1px #ddd;
+  }
+
+  &.delete-todo {
+    background: #fff;
+    color: #000;
+  }
+
+}
+
+
