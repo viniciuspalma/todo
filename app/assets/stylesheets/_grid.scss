@@ -19,44 +19,42 @@
 .column {
   float: left;
   margin-left: 5%;
-}
 
-.column:first-child {
-  margin-left: 0;
-}
+  &:first-child {
+    margin-left: 0;
+  }
 
-.column.full {
-  width: 100%;
-}
+  &.full {
+    width: 100%;
+  }
 
-.column.two-3 {
-  width: 65%;
-}
+  &.two-3 {
+    width: 65%;
+  }
 
-.column.half {
-  width: 47.5%;
-}
+  &.half {
+    width: 47.5%;
+  }
 
-.column.one-3 {
-  width: 30%;
-}
+  &.one-3 {
+    width: 30%;
+  }
 
-.column.one-4 {
-  width: 21.25%;
+  &.one-4 {
+    width: 21.25%;
+  }
 }
-
-.clearfix:before,
-.clearfix:after {
-  content: " ";
-  display: table;
-}
-
-.clearfix:after {
-  clear: both;
-}
-
 .clearfix {
   *zoom: 1;
+  &:before,
+  &:after {
+    content: " ";
+    display: table;
+  }
+
+  &:after {
+    clear: both;
+  }
 }
 
 .row {
