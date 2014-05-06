@@ -7,7 +7,7 @@ var todoList = new Vue({
   },
   methods: {
     setTodos: function(todos) {
-      for ( var i = 0; i < todos.length; i++ ) {
+      for (var i = 0; i < todos.length; i++) {
         console.log(todos[i]);
         this.$data.tasks.push(todos[i]);
       }
