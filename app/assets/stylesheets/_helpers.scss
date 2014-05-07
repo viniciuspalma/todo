@@ -8,3 +8,17 @@
   background-image:         linear-gradient(top, $fromColor, $toColor);
   filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,StartColorStr='#{$fromColor}', EndColorStr='#{$toColor}');
 }
+@mixin repeat-gradient($params...) {
+  background: -webkit-repeating-linear-gradient($params);
+  background: -moz-repeating-linear-gradient($params);
+  background: -o-repeating-linear-gradient($params);
+  background: repeating-linear-gradient($params);
+}
+
+@mixin border-radius($radius) {
+  -webkit-border-radius: $radius;
+  -moz-border-radius: $radius;
+  -ms-border-radius: $radius;
+  -o-border-radius: $radius;
+  border-radius: $radius;
+}
