@@ -1,11 +1,10 @@
 class TodoController < ApplicationController
+  @todos = Todo.all
   def index
-    @todos = Todo.all
+    render html: @todos
+  end
 
-    respond_to do |format|
-      format.html
-      format.xml {render xml: @todos}
-      format.json {render json: @todos}
-    end
+  def all
+    render json: @todos
   end
 end

@@ -1,0 +1,157 @@
+
+html {
+  font-family: 'Yanone Kaffeesatz', sans-serif;
+  font-size: 16px;
+}
+
+body {
+  background: #363D45;
+  font-size: 62.5%;
+  color: #FFF;
+}
+
+body:before {
+  content: "";
+  display: inline-block;
+  height: 500px;
+  width: 6px;
+  border-left: 6px solid #505A63;
+  position: relative;
+  left: 10%;
+}
+
+header {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 70px;
+  background: #E1675A;
+}
+
+section {
+  position: absolute;
+  top: 70px;
+  left: 10%;
+  width: 80%;
+}
+
+header h1 {
+  padding: 0;
+  margin: 0 10% 0 10%;
+  display: inline-block;
+  line-height: 70px;
+  vertical-align: middle;
+}
+
+.datas {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  list-style: none;
+  display: inline-block;
+  vertical-align: text-top;
+}
+
+.datas li {
+  font-size: 2em;
+  display: inline-block;
+  vertical-align: top;
+  margin: 10px 15px 0 0;
+}
+
+.qtd-n-done:before {
+  content: "✖";
+  display: inline-block;
+  margin-right: 5px;
+}
+
+.qtd-done:before {
+  content: "✔";
+  display: inline-block;
+  margin-right: 5px;
+}
+
+.btn-add-todo {
+  float: right;
+  display: inline-block;
+  width: 15%;
+  border: none;
+  height: 100%;
+  background: #CB5C51;
+}
+
+.list-todo {
+  padding: 0;
+  width: 100%;
+  list-style: none;
+}
+
+.task-complete,
+.task-incomplete,
+.input-new-todo {
+  padding: 0;
+  border: none;
+  background: #282D33;
+  height: 50px;
+  width: 85%;
+  margin: 30px 7.5%;
+  font-size: 1.7em;
+}
+
+.input-new-todo {
+  background: #CCC;
+  font-family: 'Yanone Kaffeesatz', sans-serif;
+  font-size: 2em;
+  color: #282D33;
+  padding-left: 5%;
+}
+
+.task-complete p,
+.task-incomplete p {
+  display: inline-block;
+  margin-left: 15%;
+}
+
+.task-complete p {
+  text-decoration: line-through;
+}
+
+.task-complete:before,
+.task-incomplete:before {
+  display: inline-block;
+  height: 20px;
+  width: 17px;
+  background: #505A63;
+  border-radius: 50%;
+  margin-left: -11.75%;
+  margin-top: 15px;
+  padding-left: 3px;
+}
+
+.task-complete:before {
+  content: "✔";
+}
+.task-incomplete:before {
+  content: "✖";
+}
+
+
+::-webkit-input-placeholder {
+   color: #282D33;
+   font-family: 'Yanone Kaffeesatz', sans-serif;
+}
+
+:-moz-placeholder {
+   color: #282D33;
+   font-family: 'Yanone Kaffeesatz', sans-serif;
+}
+
+::-moz-placeholder {
+   color: #282D33;
+   font-family: 'Yanone Kaffeesatz', sans-serif;
+}
+
+:-ms-input-placeholder {
+   color: #282D33;
+   font-family: 'Yanone Kaffeesatz', sans-serif;
+}
