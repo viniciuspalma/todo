@@ -5,9 +5,26 @@ html {
 }
 
 body {
+  margin: 0;
+  padding: 0;
   background: #363D45;
   font-size: 62.5%;
   color: #FFF;
+}
+
+button {
+  border:none;
+  font-family: 'Yanone Kaffeesatz', sans-serif;
+}
+
+.btn-remove-todo {
+  margin: 0;
+  width: 20%;
+  height: 100%  ;
+  background: #E1675A;
+  display: inline-block;
+  vertical-align: top;
+  float: right;
 }
 
 body:before {
@@ -135,8 +152,7 @@ header h1 {
   content: "✖";
 }
 
-
-::-webkit-input-placeholder {
+::-webkit-int-placeholder {
    color: #282D33;
    font-family: 'Yanone Kaffeesatz', sans-serif;
 }
