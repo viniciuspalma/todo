@@ -4,13 +4,13 @@ Todos.TodoController = Ember.ObjectController.extend({
       var model = this.get('model');
 
       if (value === undefined) {
-        return model.get('isCompleted');
+        return model.get('active');
       }
       else {
-        model.set('isCompleted', value);
+        model.set('active', value);
         model.save();
         return value;
       }
-    }.property('model.isCompleted')
+    }.property('model.active')
   }
 });

@@ -6,12 +6,11 @@ Todos.TodosController = Ember.ArrayController.extend({
 
       todo = this.store.createRecord('todo', {
         title: title,
-        isCompleted: false
+        active: false
       });
 
       this.set('newTitle', '');
       todo.save();
     }
-
   }
 });
