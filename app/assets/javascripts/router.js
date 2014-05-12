@@ -4,6 +4,6 @@ Todos.Router.map(function() {
 
 Todos.TodosRoute = Ember.Route.extend({
   model: function() {
-    return $.getJSON('/todo/all');
+    return this.store.find('todo');
   }
 });
