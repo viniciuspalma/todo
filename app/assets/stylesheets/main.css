@@ -27,16 +27,6 @@ button {
   float: right;
 }
 
-body:before {
-  content: "";
-  display: inline-block;
-  height: 500px;
-  width: 6px;
-  border-left: 6px solid #505A63;
-  position: relative;
-  left: 10%;
-}
-
 header {
   position: absolute;
   top: 0;
@@ -103,6 +93,17 @@ header h1 {
   list-style: none;
 }
 
+
+.list-todo:before {
+  content: "";
+  display: inline-block;
+  height: 600px;
+  width: 6px;
+  border-left: 6px solid #505A63;
+  position: absolute;
+  z-index: -1;
+}
+
 .task-complete,
 .task-incomplete,
 .input-new-todo {
@@ -143,6 +144,7 @@ header h1 {
   margin-left: -11.75%;
   margin-top: 15px;
   padding-left: 3px;
+  line-height: 20px;
 }
 
 .task-complete:before {
