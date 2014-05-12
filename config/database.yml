@@ -4,5 +4,5 @@ development:
   database: todo-app_development
   pool: 5
   host: localhost
-  username: codeminer
-  password: code
+  username: postgres
+  password: 84595716
