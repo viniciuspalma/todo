@@ -12,5 +12,12 @@ Todos.TodosController = Ember.ArrayController.extend({
       this.set('newTitle', '');
       todo.save();
     }
-  }
+  },
+  remaining: function() {
+    return this.filterBy('active', false).get('length');
+  }.property('@each.active'),
+
+  done: function() {
+    return this.filterBy('active', true).get('length');
+  }.property('@each.active')
 });
