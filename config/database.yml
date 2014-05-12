@@ -1,8 +1,0 @@
-development:
-  adapter: postgresql
-  encoding: unicode
-  database: todo-app_development
-  pool: 5
-  host: localhost
-  username: postgres
-  password: 84595716
