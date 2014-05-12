@@ -4,6 +4,6 @@ TodoList::Application.routes.draw do
   post '/todos' => 'todo#create'
   get 'todos' => 'todo#all'
   put '/todos/:id' => 'todo#update'
-  delete '/todos/:id' => 'todo#delete'
+  delete '/todos/:id' => 'todo#destroy'
 
 end
