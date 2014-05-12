@@ -11,6 +11,12 @@ Todos.TodoController = Ember.ObjectController.extend({
         model.save();
         return value;
       }
-    }.property('model.active')
+    }.property('model.active'),
+
+    deleteTodo: function() {
+      var model = this.get('model');
+      model.deleteRecord();
+      model.save();
+    }
   }
 });
