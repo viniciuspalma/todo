@@ -35,6 +35,14 @@ class TodoController < ApplicationController
     end
   end
 
+  def update
+    @todo = Todo.find(params[:id])
+    @todo.title = params[:todo][:title]
+    @todo.active = params[:todo][:active]
+    @todo.save
+    render nothing: true
+  end
+
   def get_all_todos
     @todos = Todo.all
   end

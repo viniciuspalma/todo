@@ -1,17 +1,11 @@
 Todos.TodoController = Ember.ObjectController.extend({
   actions: {
-    isCompleted: function(key, value){
+    updateTodo: function() {
       var model = this.get('model');
-
-      if (value === undefined) {
-        return model.get('active');
-      }
-      else {
-        model.set('active', value);
-        model.save();
-        return value;
-      }
-    }.property('model.active'),
+      var newValue = model.get('active');
+      model.set('active', newValue ? false : true);
+      model.save();
+    },
 
     deleteTodo: function() {
       var model = this.get('model');

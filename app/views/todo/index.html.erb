@@ -13,8 +13,7 @@
       {{input type="text" id="new-todo" placeholder="Escreva uma nova tarefa..." class="input-new-todo" value=newTitle action="createTodo"}}</li>
       {{#each itemController="todo"}}
         <li {{bind-attr class="active:task-complete:task-incomplete"}}>
-          {{input type="checkbox" checked=active class="toggle"}}
-          <p>{{title}}</p>
+          <p {{action "updateTodo"}}>{{title}}</p>
           <button class="btn-remove-todo" {{action "deleteTodo"}}>Excluir</button>
         </li>
       {{/each}}
