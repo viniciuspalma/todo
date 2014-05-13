@@ -91,17 +91,7 @@ header h1 {
   padding: 0;
   width: 100%;
   list-style: none;
-}
-
-
-.list-todo:before {
-  content: "";
-  display: inline-block;
-  height: 600px;
-  width: 6px;
   border-left: 6px solid #505A63;
-  position: absolute;
-  z-index: -1;
 }
 
 .task-complete,
@@ -112,7 +102,7 @@ header h1 {
   background: #282D33;
   height: 50px;
   width: 85%;
-  margin: 30px 7.5%;
+  margin: 0 0 5px 0;
   font-size: 1.7em;
 }
 
@@ -130,6 +120,11 @@ header h1 {
   margin-left: 15%;
 }
 
+.task-complete p:hover,
+.task-incomplete p:hover {
+  cursor: pointer;
+}
+
 .task-complete p {
   text-decoration: line-through;
 }
@@ -145,6 +140,7 @@ header h1 {
   margin-top: 15px;
   padding-left: 3px;
   line-height: 20px;
+  border-bottom: solid 2px;
 }
 
 .task-complete:before {
