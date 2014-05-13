@@ -1,5 +1,5 @@
 class TodoController < ApplicationController
-  before_filter :get_all_todos
+  before_filter :get_all_todos, only: [:index, :all]
 
   def index
     render html: @todos
