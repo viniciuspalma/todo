@@ -44,6 +44,6 @@ class TodoController < ApplicationController
   end
 
   def get_all_todos
-    @todos = Todo.all
+    @todos = Todo.order("id ASC").all
   end
 end
