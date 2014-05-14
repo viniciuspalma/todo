@@ -48,7 +48,8 @@
       data: data
     })
     .done(function(res) {
-      that.data[this.resource].push(res);
+      that.data[that.resource].push(res);
+      that.updateView();
     });
 
     return this;
@@ -56,16 +57,20 @@
 
   Storage.prototype.initializeView = function(res) {
 
-    var source = $(this.template).html()
-      , template = Handlebars.compile(source);
+
+    this.source = $(this.template).html()
+    this.template = Handlebars.compile(this.source);
 
     for(var i=0; i<res.length; i++) {
         this.data[this.resource].push(res[i]);
     }
 
-    console.log(this.data)
-    $(this.context).html(template(this.data));
+    this.updateView();
     return this;
+  };
+
+  Storage.prototype.updateView = function() {
+    $(this.context).html(this.template(this.data));
   };
 
   window.Storage = Storage;
