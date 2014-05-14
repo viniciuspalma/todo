@@ -7,7 +7,7 @@
     'template': ''
   };
 
-  function Storage(options, data) {
+  var Storage = function Storage(options, data) {
     this.options = window.customizeOptions(options || {}, defaults);
 
     this.host = this.options.host;
@@ -21,8 +21,6 @@
     this.data[this.resource] = [];
 
     this.populate();
-    this.initializeView();
-
   };
 
   Storage.prototype.populate = function() {
@@ -40,7 +38,6 @@
   };
 
   Storage.prototype.save = function(data) {
-
     $.ajax({
       type: "POST",
       url: this.url,
