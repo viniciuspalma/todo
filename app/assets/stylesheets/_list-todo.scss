@@ -1,0 +1,60 @@
+.list-todo {
+  padding: 0;
+  width: 100%;
+  list-style: none;
+  border-left: 6px solid $light-gray;
+}
+
+.task-complete,
+.task-incomplete,
+.input-new-todo {
+  padding: 0;
+  border: none;
+  background: $dark-gray;
+  height: 50px;
+  width: 85%;
+  margin-bottom: 5px;
+  font-size: 1.7em;
+}
+
+.input-new-todo {
+  background: $gray;
+  font-family: $font;
+  font-size: 2em;
+  color: $dark-gray;
+  padding-left: 5%;
+}
+
+.task-complete-title,
+.task-incomplete-title {
+  display: inline-block;
+  margin-left: 15%;
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.task-complete-title {
+  text-decoration: line-through;
+}
+
+.task-complete:before,
+.task-incomplete:before {
+  display: inline-block;
+  height: 20px;
+  width: 17px;
+  background: $light-gray;
+  border-radius: 50%;
+  margin-left: -11.75%;
+  margin-top: 15px;
+  padding-left: 3px;
+  line-height: 20px;
+  border-bottom: solid 2px;
+}
+
+.task-complete:before {
+  content: "✔";
+}
+.task-incomplete:before {
+  content: "✖";
+}

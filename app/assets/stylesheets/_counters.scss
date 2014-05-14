@@ -1,0 +1,29 @@
+.counters {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  list-style: none;
+  display: inline-block;
+  vertical-align: text-top;
+
+  & li {
+    font-size: 2em;
+    display: inline-block;
+    vertical-align: top;
+    margin: 10px 15px 0 0;
+  }
+}
+
+.qtd-n-done:before,
+.qtd-done:before {
+  display: inline-block;
+  margin-right: 5px;
+}
+
+.qtd-done:before {
+  content: "✔";
+}
+
+.qtd-n-done:before {
+  content: "✖";
+}

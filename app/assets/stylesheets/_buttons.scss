@@ -1,0 +1,13 @@
+.button {
+  border: none;
+  font-family: $font;
+
+  &.btn-remove-todo {
+    margin: 0;
+    width: 20%;
+    height: 100%;
+    display: inline-block;
+    float: right;
+    background: $red;
+  }
+}
