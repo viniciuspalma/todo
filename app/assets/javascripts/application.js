@@ -2,10 +2,4 @@
 //= require handlebars-v1.3.0
 //= require helpers
 //= require storage
-
-
-var store = new Storage({
-  resource: 'todos',
-  template: '#todos'
-});
-
+//= require todo
