@@ -7,18 +7,8 @@
     'template': ''
   };
 
-  function customizeOptions(options) {
-    var prop;
-    for (prop in defaults) {
-      if (!options.hasOwnProperty(prop)) {
-        options[prop] = defaults[prop];
-      }
-    }
-    return options;
-  }
-
   function Storage(options, data) {
-    this.options = customizeOptions(options || {});
+    this.options = window.customizeOptions(options || {}, defaults);
 
     this.host = this.options.host;
     this.namespace = this.options.namespace;
