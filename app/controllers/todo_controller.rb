@@ -20,7 +20,7 @@ class TodoController < ApplicationController
     @todo.title = params[:todo][:title]
     @todo.active = params[:todo][:active]
     if @todo.save
-      render text: 'Go'
+      render json: @todo
     else
       render text: 'fail'
     end
