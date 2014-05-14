@@ -4,7 +4,8 @@
     'host': 'http://localhost:3000',
     'namespace': '',
     'resource': '',
-    'template': ''
+    'template': '',
+    'context': 'body'
   };
 
   var Storage = function Storage(options, data) {
@@ -14,6 +15,7 @@
     this.namespace = this.options.namespace;
     this.resource = this.options.resource;
     this.template = this.options.template;
+    this.context = this.options.context;
 
     this.url = this.host + this.namespace + "/" + this.resource;
 
@@ -62,7 +64,7 @@
     }
 
     console.log(this.data)
-    $("body").html(template(this.data));
+    $(this.context).html(template(this.data));
     return this;
   };
 
