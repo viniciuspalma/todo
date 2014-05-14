@@ -45,6 +45,20 @@
     return this;
   };
 
+  Storage.prototype.save = function(data) {
+    console.log(this.url)
+    $.ajax({
+      type: "POST",
+      url: this.url,
+      data: data
+    })
+    .done(function( res ) {
+      console.log( res );
+    });
+
+    return this;
+  };
+
   window.Storage = Storage;
 
 }(this));
