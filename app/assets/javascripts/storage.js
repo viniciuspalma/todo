@@ -38,13 +38,15 @@
   };
 
   Storage.prototype.save = function(data) {
+    var that = this;
+
     $.ajax({
       type: "POST",
       url: this.url,
       data: data
     })
-    .done(function( res ) {
-      console.log( res );
+    .done(function(res) {
+      that.data[this.resource].push(res);
     });
 
     return this;
