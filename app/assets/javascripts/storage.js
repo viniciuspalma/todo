@@ -10,7 +10,7 @@
     'context': 'body'
   };
 
-  var Storage = function Storage(options, data) {
+  var Storage = function Storage(options, data, cb) {
     this.options = window.customizeOptions(options || {}, defaults);
 
     this.host = this.options.host;
@@ -24,10 +24,10 @@
     this.data = data || {};
     this.data[this.resource] = [];
 
-    this.populate();
+    this.populate(cb);
   };
 
-  Storage.prototype.populate = function() {
+  Storage.prototype.populate = function(cb) {
     var that = this;
 
     $.ajax({
@@ -35,13 +35,13 @@
       url: that.url
     })
     .done(function(res) {
-      that.initializeView(res);
+      that.initializeView(res, cb);
     });
 
     return this;
   };
 
-  Storage.prototype.save = function(data) {
+  Storage.prototype.save = function(data, cb) {
     var that = this;
 
     $.ajax({
@@ -50,15 +50,14 @@
       data: data
     })
     .done(function(res) {
-      console.log('id: ' + res.id)
       that.data[that.resource].push(res);
-      that.updateView();
+      that.updateView(cb);
     });
 
     return this;
   };
 
-  Storage.prototype.delete = function(id) {
+  Storage.prototype.delete = function(id, cb) {
     var that = this;
 
     $.ajax({
@@ -71,11 +70,12 @@
           that.data[that.resource].splice(i, 1);
         }
       }
-      that.updateView();
+
+      that.updateView(cb);
     });
   };
 
-  Storage.prototype.update = function(id, data) {
+  Storage.prototype.update = function(id, data, cb) {
     var that = this;
 
     $.ajax({
@@ -91,12 +91,11 @@
           that.data[that.resource][i].active = data.todo.active;
         }
       }
-
-      that.updateView();
+      that.updateView(cb);
     });
   };
 
-  Storage.prototype.initializeView = function(res) {
+  Storage.prototype.initializeView = function(res, cb) {
     this.source = $(this.template).html()
     this.template = Handlebars.compile(this.source);
 
@@ -104,11 +103,15 @@
         this.data[this.resource].push(res[i]);
     }
 
-    this.updateView();
+    this.updateView(cb);
     return this;
   };
 
-  Storage.prototype.updateView = function() {
+  Storage.prototype.updateView = function(cb) {
+
+    if(typeof cb === 'function') {
+      cb();
+    }
     $(this.context).html(this.template(this.data));
   };
 
