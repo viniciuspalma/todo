@@ -22,14 +22,6 @@
 
   }
 
-  Todo.prototype.deleteRecord = function(id) {
-    store.delete(id);
-  };
-
-  Todo.prototype.updateRecord = function(id, data) {
-    store.update(id, data);
-  };
-
   $(document).on("keyup", ".input-new-todo", function(e){
     if (e.which === 13 || e.keyCode === 13) {
       new Todo($(this).val());
