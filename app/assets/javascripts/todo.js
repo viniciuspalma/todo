@@ -28,8 +28,24 @@
     }
   });
 
-  $(document).on("click", ".button.btn-remove-todo", function(e){
+  $(document).on("click", ".button.btn-remove-todo", function(){
     store.delete($(this).parent().attr('data-todo-id'));
+  });
+
+  $(document).on("click", "#todo-title", function(){
+    var active = false;
+
+    if($(this).hasClass('task-incomplete-title')) {
+      active = true;
+    }
+
+    var data = {
+      'todo': {
+        'title': $(this).text(),
+        'active': active
+      }
+    }
+    store.update($(this).parent().attr('data-todo-id'), data);
   });
 
   window.Todo = Todo;

@@ -86,7 +86,7 @@
     .done(function(res) {
       for(var i=0; i<that.data[that.resource].length; i++) {
 
-        if(that.data[that.resource][i].id === id) {
+        if(that.data[that.resource][i].id === parseInt(id, 10)) {
           that.data[that.resource][i].title = data.todo.title;
           that.data[that.resource][i].active = data.todo.active;
         }
