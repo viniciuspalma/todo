@@ -11,7 +11,7 @@
     <ul class="list-todo">
       <li><input type="text" class="input-new-todo" placeholder="Escreva aqui uma nova tarefa..."></li>
       {{#todos}}
-        <li class="{{#if active}}task-complete{{else}}task-incomplete{{/if}}">
+        <li data-todo-id="{{id}}" class="{{#if active}}task-complete{{else}}task-incomplete{{/if}}">
           <p class="{{#if active}}task-complete-title{{else}}task-incomplete-title{{/if}}">{{title}}</p>
           <button class="button btn-remove-todo">Excluir</button>
         </li>
