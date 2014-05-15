@@ -13,6 +13,7 @@
       {{#todos}}
         <li class="{{#if active}}task-complete{{else}}task-incomplete{{/if}}">
           <p class="{{#if active}}task-complete-title{{else}}task-incomplete-title{{/if}}">{{title}}</p>
+          <button class="button btn-remove-todo">Excluir</button>
         </li>
       {{/todos}}
     </ul>
