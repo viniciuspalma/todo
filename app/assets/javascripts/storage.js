@@ -1,5 +1,7 @@
 (function (window) {
 
+  'use strict';
+
   var defaults = {
     'host': 'http://localhost:3000',
     'namespace': '',
@@ -56,8 +58,6 @@
   };
 
   Storage.prototype.initializeView = function(res) {
-
-
     this.source = $(this.template).html()
     this.template = Handlebars.compile(this.source);
 

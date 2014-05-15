@@ -1,5 +1,7 @@
 (function (window){
 
+  'use strict';
+
   var store = new Storage({
     resource: 'todos',
     template: '#todos'
