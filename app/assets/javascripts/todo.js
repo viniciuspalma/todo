@@ -26,6 +26,20 @@
     store.delete(id);
   };
 
+  Todo.prototype.updateRecord = function(id, data) {
+    store.update(id, data);
+  };
+
+  $(document).on("keyup", ".input-new-todo", function(e){
+    if (e.which === 13 || e.keyCode === 13) {
+      new Todo($(this).val());
+    }
+  });
+
+  $(document).on("click", ".button.btn-remove-todo", function(e){
+    store.delete($(this).parent().attr('data-todo-id'));
+  });
+
   window.Todo = Todo;
 
 }(this));

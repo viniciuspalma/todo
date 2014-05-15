@@ -32,7 +32,7 @@
 
     $.ajax({
       type: "GET",
-      url: this.url
+      url: that.url
     })
     .done(function(res) {
       that.initializeView(res);
@@ -46,11 +46,11 @@
 
     $.ajax({
       type: "POST",
-      url: this.url,
+      url: that.url,
       data: data
     })
     .done(function(res) {
-      console.log(res.id);
+      console.log('id: ' + res.id)
       that.data[that.resource].push(res);
       that.updateView();
     });
@@ -63,16 +63,35 @@
 
     $.ajax({
       type: "DELETE",
-      url: this.url + "/" + id
+      url: that.url + "/" + id
     })
     .done(function(res) {
       for(var i=0; i<that.data[that.resource].length; i++) {
-        console.log(that.data[that.resource][i].id);
-
-        if(that.data[that.resource][i].id === id) {
+        if(that.data[that.resource][i].id === parseInt(id, 10)) {
           that.data[that.resource].splice(i, 1);
         }
       }
+      that.updateView();
+    });
+  };
+
+  Storage.prototype.update = function(id, data) {
+    var that = this;
+
+    $.ajax({
+      type: "PUT",
+      url: that.url + "/" + id,
+      data: data
+    })
+    .done(function(res) {
+      for(var i=0; i<that.data[that.resource].length; i++) {
+
+        if(that.data[that.resource][i].id === id) {
+          that.data[that.resource][i].title = data.todo.title;
+          that.data[that.resource][i].active = data.todo.active;
+        }
+      }
+
       that.updateView();
     });
   };
