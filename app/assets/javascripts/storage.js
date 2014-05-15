@@ -50,11 +50,31 @@
       data: data
     })
     .done(function(res) {
+      console.log(res.id);
       that.data[that.resource].push(res);
       that.updateView();
     });
 
     return this;
+  };
+
+  Storage.prototype.delete = function(id) {
+    var that = this;
+
+    $.ajax({
+      type: "DELETE",
+      url: this.url + "/" + id
+    })
+    .done(function(res) {
+      for(var i=0; i<that.data[that.resource].length; i++) {
+        console.log(that.data[that.resource][i].id);
+
+        if(that.data[that.resource][i].id === id) {
+          that.data[that.resource].splice(i, 1);
+        }
+      }
+      that.updateView();
+    });
   };
 
   Storage.prototype.initializeView = function(res) {

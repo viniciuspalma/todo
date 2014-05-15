@@ -22,6 +22,10 @@
 
   }
 
+  Todo.prototype.deleteRecord = function(id) {
+    store.delete(id);
+  };
+
   window.Todo = Todo;
 
 }(this));
