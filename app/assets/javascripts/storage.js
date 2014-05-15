@@ -37,8 +37,6 @@
     .done(function(res) {
       that.initializeView(res, cb);
     });
-
-    return this;
   };
 
   Storage.prototype.save = function(data, cb) {
@@ -53,8 +51,6 @@
       that.data[that.resource].push(res);
       that.updateView(cb);
     });
-
-    return this;
   };
 
   Storage.prototype.delete = function(id, cb) {
@@ -104,7 +100,6 @@
     }
 
     this.updateView(cb);
-    return this;
   };
 
   Storage.prototype.updateView = function(cb) {
