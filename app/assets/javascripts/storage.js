@@ -10,7 +10,7 @@
     'context': 'body'
   };
 
-  var Storage = function Storage(options, data, cb) {
+  function Storage(options, data) {
     this.options = window.customizeOptions(options || {}, defaults);
 
     this.host = this.options.host;
@@ -23,8 +23,6 @@
 
     this.data = data || {};
     this.data[this.resource] = [];
-
-    this.populate(cb);
   };
 
   Storage.prototype.populate = function(cb) {
@@ -95,6 +93,9 @@
     this.source = $(this.template).html()
     this.template = Handlebars.compile(this.source);
 
+    this.sourceCounters = $('#counters').html()
+    this.templateCounters = Handlebars.compile(this.sourceCounters);
+
     for(var i=0; i<res.length; i++) {
         this.data[this.resource].push(res[i]);
     }
@@ -107,6 +108,7 @@
     if(typeof cb === 'function') {
       cb();
     }
+    $('.counters').html(this.templateCounters(this.data));
     $(this.context).html(this.template(this.data));
   };
 

@@ -4,8 +4,10 @@
 
   var store = new Storage({
     resource: 'todos',
-    template: '#todos'
-  }, {}, counters);
+    template: '#todos',
+    context: '.list-todo'
+  });
+  store.populate(counters);
 
   function Todo(title, active, cb) {
     this.title = title || "";
@@ -37,9 +39,10 @@
     }
   };
 
-  $(document).on("keyup", ".input-new-todo", function(e){
+  $('[data-new-task]').on("keyup", function(e){
     if (e.which === 13 || e.keyCode === 13) {
       new Todo($(this).val(), false, counters);
+      $(this).val('');
     }
   });
 
